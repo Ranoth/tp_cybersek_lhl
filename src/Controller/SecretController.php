@@ -13,6 +13,7 @@ class SecretController extends AbstractController
      */
     public function index(): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('secret/index.html.twig', [
             'controller_name' => 'SecretController',
         ]);
